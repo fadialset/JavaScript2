@@ -15,9 +15,47 @@
   https: //hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 
   */
+    // style the h1
+  const head = document.querySelector('h1');
+  head.style.textAlign = 'center';
 
 function createBookList(books) {
   // your code goes in here, return the ul element
+  let booklist = document.createElement('ul');
+  booklist.style.display = 'flex';
+  booklist.style.listStyle = 'none';
+  booklist.style.justifyContent = 'space-around';
+
+for (let i = 0; i< books.length; i++){
+  // creating the p element
+  let bookAuthorAndTitle = document.createElement('p');
+  bookAuthorAndTitle.textContent = books[i].title + ' by ' + books.author;
+
+  // creat the li element 
+  let bookListItems = document.createElement('li');
+  bookListItems.appendChild(bookAuthorAndTitle);
+
+  // creating the img element
+  let images = document.createElement('img');
+  images.src = `book${i+1}.jpg`; 
+  bookListItems.appendChild(images);
+
+  // changing the color based on the book is raed or not
+  if(books[i].alreadyRead){
+    bookListItems.style.backgroundColor = "green";
+  }else{
+    bookListItems.style.backgroundColor = "red";
+  }
+
+  //styles
+  booklist.appendChild(bookListItems);
+  bookListItems.style.padding = '10px';
+  bookListItems.style.width = '350px';
+  bookListItems.style.height = 'auto';
+  images.style.width = '300px';
+  images.style.height = '400px';
+}
+return booklist;
 }
 
 const books = [{
@@ -40,3 +78,6 @@ const books = [{
 let ulElement = createBookList(books);
 
 document.querySelector("#bookList").appendChild(ulElement);
+
+
+

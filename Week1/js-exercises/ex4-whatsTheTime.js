@@ -10,9 +10,16 @@
   4. Have the function execute when it 's loading in the browser
 
  */
-
+const span = document.createElement('span');
+document.body.appendChild(span);
 function displayCurrentTime() {
   // your code goes in here
+
+const time = new Date();
+span.innerHTML = time.toTimeString();
+
 }
 
 setInterval(displayCurrentTime, 1000);
+window.open(displayCurrentTime()) ;
+
