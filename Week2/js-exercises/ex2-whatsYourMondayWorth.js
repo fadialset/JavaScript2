@@ -13,8 +13,13 @@
 
 
 function dayWorth(tasks, hourlyRate) {
-  // put your code in here, the function does returns a euro formatted string
-}
+  // put your code in here, the function does returns a euro formatted string 
+  const durationTimeForTask = tasks.map(mondayTasks => mondayTasks.duration / 60);
+   const multiplyDurationAndSum = durationTimeForTask.reduce(function (total, durationTimeForTask) {
+    return total + (durationTimeForTask * hourlyRate)
+   }, 0)
+  return `€${ multiplyDurationAndSum }`;
+};
 
 const mondayTasks = [{
     name: 'Daily standup',
