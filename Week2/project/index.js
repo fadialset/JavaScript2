@@ -82,9 +82,8 @@ function timer(){
     } 
     if (secounds.innerText < 10 ){
       secounds.innerText = `0${secounds.innerText}`;
-      
       console.log(secounds.innerText);
-    }
+    };
   };
 //stop timer function
 function stopInterval(){
