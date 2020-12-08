@@ -71,7 +71,7 @@ function timer(){
   if(secounds.innerText != 0){
     secounds.innerText--;
   } if(minutes.innerText != 0 && secounds.innerText == 0){
-    secounds.innerText = 10;
+    secounds.innerText = 59;
     minutes.innerText --;
   } if (minutes.innerText == 0 && secounds.innerText == 0){
       minutes.style.visibility ='hidden';
