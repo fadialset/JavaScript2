@@ -16,7 +16,6 @@ function f1(val) {
 }
 f1(x);
 console.log(x);
-
 const y = {
   x: 9
 };
@@ -27,3 +26,6 @@ function f2(val) {
 }
 f2(y);
 console.log(y);
+
+// the argument in the first function is passed by value and the secound one is passed by reference
+// the variables type number and boleean and string are passed by value and the arrays and object  types are passed by reference
