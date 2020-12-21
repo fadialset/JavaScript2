@@ -43,21 +43,16 @@ function threeFive(startIndex, stopIndex, threeCallback, fiveCallback) {
  console.log(numbers);
 
   // start at beginning of array and check if you should call threeCallback or fiveCallback or go on to next
-  numbers.map((number) => {
+  numbers.forEach((number) => {
     if (number % 3 === 0) {
        threeCallback();
     }
     if (number % 5 === 0) {
        fiveCallback();
     }
-    if (number % 5 === 0 && number % 3 === 0) {
-      threeCallback();
-      fiveCallback();
-    }
-  })
-  }
-
-console.log(threeFive(10, 15, sayThree, sayFive));
+  });
+}
+threeFive(10, 15, threeCallback, fiveCallback);
 
 
 // Should create an array [10,11,12,13,14,15]
