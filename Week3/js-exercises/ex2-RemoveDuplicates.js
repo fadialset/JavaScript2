@@ -25,8 +25,8 @@ function checkSolution(array) {
 
 // WRITE YOUR FUNCTION HERE
 function removeDuplicates(array){
-  const newArray = array.filter((item,index) => array.indexOf(item)=== index);
-console.log(newArray);
+ return Array.from(new Set(array)); 
+ 
 };
 
 const letters = ['a', 'b', 'c', 'd', 'a', 'e', 'f', 'c', 'b'];
